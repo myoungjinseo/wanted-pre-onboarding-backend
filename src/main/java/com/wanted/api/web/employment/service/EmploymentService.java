@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 
 @Service
 @Slf4j
@@ -52,7 +54,9 @@ public class EmploymentService {
 
 
     public void deleteEmployment(Long employmentId) {
-        employmentRepository.deleteEmployment(employmentId);
+        Employment employment = employmentRepository.findById(employmentId).orElseThrow();
+
+        employmentRepository.delete(employment);
 
 
     }
