@@ -34,10 +34,10 @@ public class EmploymentController {
     }
 
     @DeleteMapping("/{employmentId}")
-    public ResponseEntity<?> deleteEmployment(
+    public ResponseEntity<String> deleteEmployment(
             @PathVariable Long employmentId
     ) {
         employmentService.deleteEmployment(employmentId);
-        return ResponseEntity.ok().body("완료");
+        return ResponseEntity.ok().body("삭제 완료");
     }
 }
