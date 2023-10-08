@@ -25,6 +25,4 @@ public class Company {
 
     private String region;
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Employment> employments = new ArrayList<>();
 }
