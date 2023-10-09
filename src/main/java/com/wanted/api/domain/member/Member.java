@@ -1,6 +1,7 @@
 package com.wanted.api.domain.member;
 
 import com.wanted.api.domain.employment.Employment;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Member {
     @Id
@@ -17,7 +18,5 @@ public class Member {
     private Long id;
 
     private String name;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Employment_id")
-    private Employment employment;
+
 }
