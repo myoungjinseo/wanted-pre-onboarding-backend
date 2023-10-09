@@ -1,43 +1,40 @@
 package com.wanted.api.web.employment.controller;
 
-import com.wanted.api.web.employment.dto.EmploymentRequest;
-import com.wanted.api.web.employment.dto.EmploymentResponse;
-import com.wanted.api.web.employment.service.EmploymentService;
+import com.wanted.api.web.employment.dto.EmploymentCreateRequest;
+import com.wanted.api.web.employment.dto.EmploymentCreateResponse;
+import com.wanted.api.web.employment.service.EmploymentCreateService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
 public class EmploymentController {
-    private final EmploymentService employmentService;
+    private final EmploymentCreateService employmentCreateService;
 
     @PostMapping()
     public ResponseEntity<?> postEmployment(
-            @RequestBody EmploymentRequest employmentRequest
+            @RequestBody EmploymentCreateRequest employmentCreateRequest
     ) {
-        EmploymentResponse employmentResponse = employmentService.postEmployment(employmentRequest);
-        return ResponseEntity.ok().body(employmentResponse);
+        EmploymentCreateResponse employmentCreateResponse = employmentCreateService.postEmployment(employmentCreateRequest);
+        return ResponseEntity.ok().body(employmentCreateResponse);
     }
 
     @PatchMapping("/{employmentId}")
     public ResponseEntity<?> updateEmployment(
             @PathVariable Long employmentId,
-            @RequestBody EmploymentRequest employmentRequest
+            @RequestBody EmploymentCreateRequest employmentCreateRequest
     ) {
-        EmploymentResponse employmentResponse = employmentService.updateEmployment(employmentId,employmentRequest);
-        return ResponseEntity.ok().body(employmentResponse);
+        EmploymentCreateResponse employmentCreateResponse = employmentCreateService.updateEmployment(employmentId, employmentCreateRequest);
+        return ResponseEntity.ok().body(employmentCreateResponse);
     }
 
     @DeleteMapping("/{employmentId}")
     public ResponseEntity<String> deleteEmployment(
             @PathVariable Long employmentId
     ) {
-        employmentService.deleteEmployment(employmentId);
+        employmentCreateService.deleteEmployment(employmentId);
         return ResponseEntity.ok().body("삭제 완료");
     }
 }
