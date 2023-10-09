@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmploymentRequest {
+public class EmploymentCreateRequest {
     private Long companyId;
 
     private String position;

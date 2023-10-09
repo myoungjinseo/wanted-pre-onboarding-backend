@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmploymentResponse {
+public class EmploymentCreateResponse {
     private Long companyId;
 
     private String position;
@@ -20,8 +20,8 @@ public class EmploymentResponse {
 
     private String skill;
 
-    public static EmploymentResponse from(Long companyId, Employment employment) {
-        return new EmploymentResponse(
+    public static EmploymentCreateResponse from(Long companyId, Employment employment) {
+        return new EmploymentCreateResponse(
                 companyId,
                 employment.getPosition(),
                 employment.getCompensation(),
