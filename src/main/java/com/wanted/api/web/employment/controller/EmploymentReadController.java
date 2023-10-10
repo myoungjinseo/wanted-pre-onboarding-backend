@@ -1,5 +1,6 @@
 package com.wanted.api.web.employment.controller;
 
+import com.wanted.api.common.apiResponse.ApiResponse;
 import com.wanted.api.web.employment.dto.EmploymentDetailPlusOrderIdResponse;
 import com.wanted.api.web.employment.dto.EmploymentDetailResponse;
 import com.wanted.api.web.employment.dto.EmploymentReadResponse;
@@ -16,17 +17,17 @@ import java.util.List;
 public class EmploymentReadController {
     private final EmploymentReadService employmentReadService;
     @GetMapping("/findAll")
-    public ResponseEntity<List<EmploymentReadResponse>> getEmployment(){
+    public ResponseEntity<?> getEmployment(){
         List<EmploymentReadResponse> employment = employmentReadService.getEmployment();
-        return ResponseEntity.ok().body(employment);
+        return ApiResponse.ok(employment);
     }
 
     @GetMapping("/some/url")
-    public ResponseEntity<List<EmploymentReadResponse>> searchEmployment(
+    public ResponseEntity<?> searchEmployment(
             @RequestParam String search
     ){
         List<EmploymentReadResponse> employment = employmentReadService.searchEmployment(search);
-        return ResponseEntity.ok().body(employment);
+        return ApiResponse.ok(employment);
     }
 
     @GetMapping("/some/detail/{id}")
@@ -34,6 +35,6 @@ public class EmploymentReadController {
             @PathVariable Long id
     ){
         EmploymentDetailPlusOrderIdResponse employment = employmentReadService.detailEmployment(id);
-        return ResponseEntity.ok().body(employment);
+        return ApiResponse.ok(employment);
     }
 }
