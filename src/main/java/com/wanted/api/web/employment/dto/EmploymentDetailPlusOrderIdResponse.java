@@ -23,18 +23,17 @@ public class EmploymentDetailPlusOrderIdResponse {
     private List<Long> orderId;
 
     public static EmploymentDetailPlusOrderIdResponse from(EmploymentDetailResponse employmentDetailResponse, List<Long> orderId) {
-        return  EmploymentDetailPlusOrderIdResponse.builder()
-                .employmentId(employmentDetailResponse.getEmploymentId())
-                .companyName(employmentDetailResponse.getCompanyName())
-                .country(employmentDetailResponse.getCountry())
-                .region(employmentDetailResponse.getRegion())
-                .position(employmentDetailResponse.getPosition())
-                .compensation(employmentDetailResponse.getCompensation())
-                .skill(employmentDetailResponse.getSkill())
-                .content(employmentDetailResponse.getContent())
-                .orderId(orderId)
-                .build();
-
+        return  new EmploymentDetailPlusOrderIdResponse(
+                employmentDetailResponse.getEmploymentId(),
+                employmentDetailResponse.getCompanyName(),
+                employmentDetailResponse.getCountry(),
+                employmentDetailResponse.getRegion(),
+                employmentDetailResponse.getPosition(),
+                employmentDetailResponse.getCompensation(),
+                employmentDetailResponse.getSkill(),
+                employmentDetailResponse.getContent(),
+                orderId
+        );
     }
 
 }
