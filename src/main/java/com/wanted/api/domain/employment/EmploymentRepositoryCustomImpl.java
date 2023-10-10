@@ -2,6 +2,7 @@ package com.wanted.api.domain.employment;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import com.wanted.api.domain.company.Company;
 import com.wanted.api.web.employment.dto.EmploymentDetailResponse;
 import com.wanted.api.web.employment.dto.EmploymentReadResponse;
 import lombok.RequiredArgsConstructor;
@@ -19,21 +20,18 @@ public class EmploymentRepositoryCustomImpl implements EmploymentRepositoryCusto
     private final JPAQueryFactory jpaQueryFactory;
 
     @Override
-    public Optional<List<EmploymentReadResponse>> findAllAndCompany() {
-        return Optional.ofNullable(
-                jpaQueryFactory.select(Projections.fields(EmploymentReadResponse.class,
+    public List<EmploymentReadResponse> findAllAndCompany() {
+        return jpaQueryFactory.select(Projections.fields(EmploymentReadResponse.class,
                                 employment.id.as("employmentId"), company.name.as("companyName")
                                 , company.country, company.region
                                 , employment.position, employment.compensation, employment.skill))
                         .from(employment)
-                        .fetch()
-        );
+                        .fetch();
     }
 
     @Override
-    public Optional<List<EmploymentReadResponse>> findSearchAndCompany(String search) {
-        return Optional.ofNullable(
-                jpaQueryFactory.select(Projections.fields(EmploymentReadResponse.class,
+    public List<EmploymentReadResponse> findSearchAndCompany(String search) {
+        return jpaQueryFactory.select(Projections.fields(EmploymentReadResponse.class,
                                 employment.id.as("employmentId"), company.name.as("companyName")
                                 , company.country, company.region
                                 , employment.position, employment.compensation, employment.skill))
@@ -43,31 +41,26 @@ public class EmploymentRepositoryCustomImpl implements EmploymentRepositoryCusto
                                 .or(company.region.contains(search))
                                 .or(employment.position.contains(search))
                                 .or(employment.skill.contains(search)))
-                        .fetch()
-        );
+                        .fetch();
     }
 
     @Override
-    public Optional<List<Long>> findByCompanyId(Long id){
-        return Optional.ofNullable(
-          jpaQueryFactory.select(company.id)
-                  .from(employment)
-                  .where(employment.id.eq(id))
-                  .fetch()
-        );
+    public List<Long> findByCompany(Long id , Company company) {
+        return jpaQueryFactory.select(employment.id)
+                .from(employment)
+                .where(employment.id.ne(id).and(employment.company.eq(company)))
+                .fetch();
     }
 
     @Override
-    public Optional<EmploymentDetailResponse> findByEmploymentId(Long id){
-        return Optional.ofNullable(
-                jpaQueryFactory.select(Projections.fields(EmploymentDetailResponse.class,
-                        employment.id.as("employmentId"), company.name.as("companyName")
-                        , company.country, company.region
-                        , employment.position, employment.compensation, employment.skill,employment.content))
+    public EmploymentDetailResponse findByEmploymentId(Long id) {
+        return jpaQueryFactory.select(Projections.fields(EmploymentDetailResponse.class,
+                                employment.id.as("employmentId"), company.name.as("companyName")
+                                , company.country, company.region
+                                , employment.position, employment.compensation, employment.skill, employment.content))
                         .from(employment)
                         .where(employment.id.eq(id))
-                        .fetchOne()
-        );
+                        .fetchOne();
     }
 
 }
