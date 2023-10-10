@@ -1,11 +1,15 @@
 package com.wanted.api.web.employment.controller;
 
+import com.wanted.api.common.apiResponse.ApiResponse;
 import com.wanted.api.web.employment.dto.EmploymentCreateRequest;
 import com.wanted.api.web.employment.dto.EmploymentCreateResponse;
+import com.wanted.api.web.employment.dto.EmploymentUpdateRequest;
+import com.wanted.api.web.employment.dto.EmploymentUpdateResponse;
 import com.wanted.api.web.employment.service.EmploymentCreateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/api")
@@ -18,23 +22,23 @@ public class EmploymentController {
             @RequestBody EmploymentCreateRequest employmentCreateRequest
     ) {
         EmploymentCreateResponse employmentCreateResponse = employmentCreateService.postEmployment(employmentCreateRequest);
-        return ResponseEntity.ok().body(employmentCreateResponse);
+        return ApiResponse.created(employmentCreateResponse);
     }
 
     @PatchMapping("/{employmentId}")
     public ResponseEntity<?> updateEmployment(
             @PathVariable Long employmentId,
-            @RequestBody EmploymentCreateRequest employmentCreateRequest
+            @RequestBody EmploymentUpdateRequest employmentUpdateRequest
     ) {
-        EmploymentCreateResponse employmentCreateResponse = employmentCreateService.updateEmployment(employmentId, employmentCreateRequest);
-        return ResponseEntity.ok().body(employmentCreateResponse);
+        EmploymentUpdateResponse employmentUpdateResponse = employmentCreateService.updateEmployment(employmentId, employmentUpdateRequest);
+        return ApiResponse.ok(employmentUpdateResponse);
     }
 
     @DeleteMapping("/{employmentId}")
-    public ResponseEntity<String> deleteEmployment(
+    public ResponseEntity<Void> deleteEmployment(
             @PathVariable Long employmentId
     ) {
         employmentCreateService.deleteEmployment(employmentId);
-        return ResponseEntity.ok().body("삭제 완료");
+        return ApiResponse.noContent();
     }
 }
