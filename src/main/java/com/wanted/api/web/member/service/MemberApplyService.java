@@ -34,7 +34,10 @@ public class MemberApplyService {
     public MemberApplyResponse apply(MemberApplyRequest memberApplyRequest, Long employmentId){
         Member member = findMember(memberApplyRequest.getMemberId());
         Employment employment = employmentCreateService.getId(employmentId);
-
+        boolean employment1 = memberEmploymentRepository.exitsMemberEmployment(employment,member);
+        if(employment1){
+            throw new ErrorException(ErrorCode.EXITS_MEMBER);
+        }
         MemberEmployment apply = MemberEmployment.builder()
                 .employment(employment)
                 .member(member)
