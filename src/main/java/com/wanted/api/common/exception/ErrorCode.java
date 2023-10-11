@@ -18,7 +18,8 @@ public enum ErrorCode {
     // 500 에러
     NON_EXISTENT_DATA(HttpStatus.BAD_REQUEST,"존재하지 않는 데이터입니다."),
 
-    INVALID_VARIABLE(HttpStatus.BAD_REQUEST,"잘못된 변수입니다.");
+    INVALID_VARIABLE(HttpStatus.BAD_REQUEST,"잘못된 변수입니다."),
+    EXITS_MEMBER(HttpStatus.BAD_REQUEST,"이미 지원한 멤버입니다.");
 
     private final HttpStatus httpStatus;
     private final String message;
