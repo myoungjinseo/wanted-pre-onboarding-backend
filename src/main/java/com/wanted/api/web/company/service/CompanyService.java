@@ -2,8 +2,8 @@ package com.wanted.api.web.company.service;
 
 import com.wanted.api.common.exception.ErrorCode;
 import com.wanted.api.common.exception.ErrorException;
-import com.wanted.api.domain.company.Company;
-import com.wanted.api.domain.company.CompanyRepository;
+import com.wanted.api.domain.company.entity.Company;
+import com.wanted.api.domain.company.repo.CompanyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

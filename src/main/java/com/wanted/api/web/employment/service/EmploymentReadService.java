@@ -1,8 +1,7 @@
 package com.wanted.api.web.employment.service;
 
-import com.wanted.api.domain.company.Company;
-import com.wanted.api.domain.employment.Employment;
-import com.wanted.api.domain.employment.EmploymentRepository;
+import com.wanted.api.domain.employment.entity.Employment;
+import com.wanted.api.domain.employment.repo.EmploymentRepository;
 import com.wanted.api.web.employment.dto.EmploymentDetailPlusOrderIdResponse;
 import com.wanted.api.web.employment.dto.EmploymentDetailResponse;
 import com.wanted.api.web.employment.dto.EmploymentReadResponse;

@@ -2,10 +2,10 @@ package com.wanted.api.web.employment.service;
 
 import com.wanted.api.common.exception.ErrorCode;
 import com.wanted.api.common.exception.ErrorException;
-import com.wanted.api.domain.company.Company;
-import com.wanted.api.domain.company.CompanyRepository;
-import com.wanted.api.domain.employment.Employment;
-import com.wanted.api.domain.employment.EmploymentRepository;
+import com.wanted.api.domain.company.entity.Company;
+import com.wanted.api.domain.company.repo.CompanyRepository;
+import com.wanted.api.domain.employment.entity.Employment;
+import com.wanted.api.domain.employment.repo.EmploymentRepository;
 import com.wanted.api.web.company.service.CompanyService;
 import com.wanted.api.web.employment.dto.EmploymentCreateRequest;
 import com.wanted.api.web.employment.dto.EmploymentCreateResponse;
