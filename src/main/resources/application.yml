@@ -18,19 +18,6 @@ spring:
   sql:
     init:
       mode: always
-
 springdoc:
-  default-consumes-media-type: application/json
-  default-produces-media-type: application/json
-  api-docs:
-    groups:
-      enabled: true
-  swagger-ui:
-    operations-sorter: alpha # alpha(??? ????), method(HTTP????)
-    tags-sorter: alpha # ?? ?? ??
-    path: /swagger-ui.html # html ?? ?? ??
-    disable-swagger-default-url: true
-    doc-expansion: none
-  paths-to-match:
-
+    path: /swagger
 
