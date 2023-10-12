@@ -1,7 +1,7 @@
 package com.wanted.api.web.member.dto;
 
 
-import com.wanted.api.domain.member.MemberEmployment;
+import com.wanted.api.domain.member.entity.MemberEmployment;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;

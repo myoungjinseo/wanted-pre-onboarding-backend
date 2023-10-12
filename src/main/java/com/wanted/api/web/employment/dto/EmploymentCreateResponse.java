@@ -1,6 +1,6 @@
 package com.wanted.api.web.employment.dto;
 
-import com.wanted.api.domain.employment.Employment;
+import com.wanted.api.domain.employment.entity.Employment;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
