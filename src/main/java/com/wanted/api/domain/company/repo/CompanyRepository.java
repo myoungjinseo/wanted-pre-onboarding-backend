@@ -1,5 +1,6 @@
-package com.wanted.api.domain.company;
+package com.wanted.api.domain.company.repo;
 
+import com.wanted.api.domain.company.entity.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

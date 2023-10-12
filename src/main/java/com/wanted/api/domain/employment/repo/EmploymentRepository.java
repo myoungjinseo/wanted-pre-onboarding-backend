@@ -1,6 +1,6 @@
-package com.wanted.api.domain.employment;
+package com.wanted.api.domain.employment.repo;
 
-import com.wanted.api.domain.company.Company;
+import com.wanted.api.domain.employment.entity.Employment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

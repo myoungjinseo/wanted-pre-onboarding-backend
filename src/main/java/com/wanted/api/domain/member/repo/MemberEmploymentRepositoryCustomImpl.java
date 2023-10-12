@@ -1,14 +1,13 @@
-package com.wanted.api.domain.member;
+package com.wanted.api.domain.member.repo;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.wanted.api.domain.employment.Employment;
+import com.wanted.api.domain.employment.entity.Employment;
+import com.wanted.api.domain.member.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 
-import static com.wanted.api.domain.member.QMember.member;
-import static com.wanted.api.domain.member.QMemberEmployment.memberEmployment;
+import static com.wanted.api.domain.member.entity.QMemberEmployment.memberEmployment;
 
 @Repository
 @RequiredArgsConstructor

@@ -1,18 +1,17 @@
-package com.wanted.api.domain.employment;
+package com.wanted.api.domain.employment.repo;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.wanted.api.domain.company.Company;
+import com.wanted.api.domain.company.entity.Company;
 import com.wanted.api.web.employment.dto.EmploymentDetailResponse;
 import com.wanted.api.web.employment.dto.EmploymentReadResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
-import static com.wanted.api.domain.employment.QEmployment.employment;
-import static com.wanted.api.domain.company.QCompany.company;
+import static com.wanted.api.domain.employment.entity.QEmployment.employment;
+import static com.wanted.api.domain.company.entity.QCompany.company;
 
 @Repository
 @RequiredArgsConstructor

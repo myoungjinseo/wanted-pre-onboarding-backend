@@ -1,6 +1,7 @@
-package com.wanted.api.domain.employment;
+package com.wanted.api.domain.employment.entity;
 
-import com.wanted.api.domain.company.Company;
+import com.wanted.api.common.entity.BaseTimeEntity;
+import com.wanted.api.domain.company.entity.Company;
 
 import com.wanted.api.web.employment.dto.EmploymentUpdateRequest;
 import lombok.*;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
-public class Employment {
+public class Employment extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
