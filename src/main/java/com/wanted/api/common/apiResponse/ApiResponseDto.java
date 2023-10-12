@@ -12,17 +12,17 @@ import org.springframework.http.ResponseEntity;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class ApiResponse<T> {
+public class ApiResponseDto<T> {
     private T data;
 
-    public static <T> ResponseEntity<ApiResponse<T>> ok(T data) {
-        return ResponseEntity.ok(new ApiResponse<T>(data));
+    public static <T> ResponseEntity<ApiResponseDto<T>> ok(T data) {
+        return ResponseEntity.ok(new ApiResponseDto<T>(data));
     }
 
-    public static <T> ResponseEntity<ApiResponse<T>> created(T data) {
+    public static <T> ResponseEntity<ApiResponseDto<T>> created(T data) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(new ApiResponse<T>(data));
+                .body(new ApiResponseDto<T>(data));
     }
 
     public static ResponseEntity<Void> noContent() {
