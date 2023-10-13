@@ -1,10 +1,7 @@
 package com.wanted.api.domain.company.entity;
 
 import com.wanted.api.common.entity.BaseTimeEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,6 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Builder
 public class Company extends BaseTimeEntity {
 
     @Id
