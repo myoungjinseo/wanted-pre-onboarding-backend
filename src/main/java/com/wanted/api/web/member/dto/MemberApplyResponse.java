@@ -10,6 +10,9 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class MemberApplyResponse {
+    @Schema(description = "지원내역 id")
+    private Long applyId;
+
     @Schema(description = "채용공고 id")
     private Long employmentId;
 
@@ -18,6 +21,7 @@ public class MemberApplyResponse {
 
     public static MemberApplyResponse from(MemberEmployment memberEmployment) {
         return new MemberApplyResponse(
+                memberEmployment.getId(),
                 memberEmployment.getMember().getId(),
                 memberEmployment.getEmployment().getId()
         );
