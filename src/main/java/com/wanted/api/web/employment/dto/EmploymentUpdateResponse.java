@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmploymentUpdateResponse {
+    @Schema(description = "채용공고 id")
+    private Long employmentId;
+
     @Schema(description = "채용 포지션")
     private String position;
 
@@ -22,7 +25,7 @@ public class EmploymentUpdateResponse {
 
     public static EmploymentUpdateResponse from(Employment employment) {
         return new EmploymentUpdateResponse(
-
+                employment.getId(),
                 employment.getPosition(),
                 employment.getCompensation(),
                 employment.getContent(),

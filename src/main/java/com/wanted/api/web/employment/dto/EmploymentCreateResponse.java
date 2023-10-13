@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmploymentCreateResponse {
+    @Schema(description = "채용공고 id")
+    private Long employmentId;
+
     @Schema(description = "회사 id")
     private Long companyId;
 
@@ -27,6 +30,7 @@ public class EmploymentCreateResponse {
 
     public static EmploymentCreateResponse from(Long companyId, Employment employment) {
         return new EmploymentCreateResponse(
+                employment.getId(),
                 companyId,
                 employment.getPosition(),
                 employment.getCompensation(),
