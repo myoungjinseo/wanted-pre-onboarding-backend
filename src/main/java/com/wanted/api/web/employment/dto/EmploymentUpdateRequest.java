@@ -2,10 +2,13 @@ package com.wanted.api.web.employment.dto;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor
 public class EmploymentUpdateRequest {
 
