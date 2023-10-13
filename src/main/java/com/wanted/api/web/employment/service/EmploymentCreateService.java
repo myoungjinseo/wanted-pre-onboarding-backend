@@ -23,7 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmploymentCreateService {
 
     private final EmploymentRepository employmentRepository;
-    private final CompanyRepository companyRepository;
     private final CompanyService companyService;
 
     @Transactional
