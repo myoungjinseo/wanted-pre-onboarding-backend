@@ -69,7 +69,7 @@
 }
 ```
 
-### 3. 채용 공고 삭제 (PATCH)
+### 3. 채용 공고 삭제 (DELETE)
 /api/employment/{employmentId}
 #### 요청
 ```json
