@@ -15,7 +15,7 @@
 ### 1. 채용 공고 등록 (POST)
 /api/employment
 #### 요청 
----json
+```json
 {
     "companyId" : 1,
 
