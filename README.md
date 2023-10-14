@@ -10,7 +10,7 @@
 4. Unit Test 구현 : junit을 이용한 테스트 코드 구현 <br>
    
 ## 구현과정
-0. 회사 및 사용자 등록 <br>
+### 0. 회사 및 사용자 등록 <br>
 .sql 파일을 이용해서 진행 <br>
 ### 1. 채용 공고 등록 (POST)
 /api/employment
