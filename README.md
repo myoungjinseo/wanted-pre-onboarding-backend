@@ -197,3 +197,15 @@
 
 ## ERD 다이어그램
 <img src="https://github.com/myoungjinseo/wanted-pre-onboarding-backend/assets/80959635/bdd0ed62-6e35-4cee-9d1a-925b083ab56a" width="300" height="600"/>
+
+
+## 테스트 
+1. 채용 공고 생성
+2. 채용 공고 업데이트
+3. 채용 공고 삭제
+4. 모든 채용 공고 조회
+5. 채용 공고 검색
+6. 채용 공고 상세페이지 조회
+7. 사용자 채용 공고 지원
+8. 사용자 채용 공고 중복 지원
+8개 서비스 테스트 코드 완성했습니다.
