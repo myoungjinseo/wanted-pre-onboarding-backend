@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 백엔드 인턴십 - 사전 과제
 ### 이름 : 서명진
-자세한 내용은 깃허브 위키를 참고해주세여<br>
+자세한 내용은 깃허브 위키에서 작성하였으며, 리드미에는 요약만 작성했습니다.<br>
 [깃허브 위키](https://github.com/myoungjinseo/wanted-pre-onboarding-backend/wiki)
 
 ## 요구사항 분석 및 실행 여부
